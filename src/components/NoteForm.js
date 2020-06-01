@@ -5,13 +5,14 @@ const NoteForm = props => {
 
   return (
     <form>
-      <label htmlFor="email">Email:</label>
+      <label htmlFor="email">Email: &nbsp;</label>
       <input
         id="email"
         type="text"
         name="email"
         placeholder="Please Enter Your Email:"
       />
+
       <button>Click To Submit</button>
     </form>
   );

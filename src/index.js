@@ -15,10 +15,14 @@ function App() {
     }
   ]);
 
+  const addNote = newNote => {
+    setNotes([...notes, newNote]);
+  };
+
   return (
     <div className="App">
       <h1>My Notes</h1>
-      <NotesForm />
+      <NotesForm addNote={addNote} />
       <Notes notes={notes} />
     </div>
   );

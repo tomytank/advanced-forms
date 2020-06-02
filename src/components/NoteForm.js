@@ -17,22 +17,25 @@ const NoteForm = props => {
 
     console.log(event.target.name, event.target.value);
   };
-  // const onSubmit = () => {
-  //   console.log(event);
-  //   event.preventDefault();
-  //   console.log(props.addNote);
-  //   props.addNote(note);
-  //   setNote({ title: "", body: "", id: Date.now() });
-  // };
+
+
+  const submitHandler = event => {
+    event.preventDefault();
+    console.log(props.addNote);
+    props.addNote(note);
+    setNote({ title: "", body: "", id: Date.now() });
+  };
+
   return (
     <form
-      //onSubmit={onSubmit()}
-      onSubmit={event => {
-        event.preventDefault();
-        console.log(props.addNote);
-        props.addNote(note);
-        setNote({ title: "", body: "", id: Date.now() });
-      }}
+      onSubmit={submitHandler(e)}
+      // onSubmit={event => {
+      //   event.preventDefault();
+      //   console.log(props.addNote);
+      //   props.addNote(note);
+      //   setNote({ title: "", body: "", id: Date.now() });
+      // }}
+
     >
       <label htmlFor="title">Title: &nbsp;</label>
       <input

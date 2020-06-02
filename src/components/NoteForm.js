@@ -2,10 +2,11 @@ import React, { useState } from "react";
 
 const NoteForm = props => {
   //console.log(Wthis is our props: ",props");
-  const [title, setTitle] = useState("");
+  //const [title, setTitle] = useState("");
   const [note, setNote] = useState({
     title: "",
-    body: ""
+    body: "",
+    id: Date.now()
   });
   console.log(note);
   const changeHandler = event => {
@@ -16,11 +17,21 @@ const NoteForm = props => {
 
     console.log(event.target.name, event.target.value);
   };
-
+  // const onSubmit = () => {
+  //   console.log(event);
+  //   event.preventDefault();
+  //   console.log(props.addNote);
+  //   props.addNote(note);
+  //   setNote({ title: "", body: "", id: Date.now() });
+  // };
   return (
     <form
+      //onSubmit={onSubmit()}
       onSubmit={event => {
         event.preventDefault();
+        console.log(props.addNote);
+        props.addNote(note);
+        setNote({ title: "", body: "", id: Date.now() });
       }}
     >
       <label htmlFor="title">Title: &nbsp;</label>

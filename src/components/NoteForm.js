@@ -18,6 +18,7 @@ const NoteForm = props => {
     console.log(event.target.name, event.target.value);
   };
 
+
   const submitHandler = event => {
     event.preventDefault();
     console.log(props.addNote);
@@ -34,6 +35,7 @@ const NoteForm = props => {
       //   props.addNote(note);
       //   setNote({ title: "", body: "", id: Date.now() });
       // }}
+
     >
       <label htmlFor="title">Title: &nbsp;</label>
       <input

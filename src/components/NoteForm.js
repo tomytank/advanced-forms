@@ -27,7 +27,7 @@ const NoteForm = props => {
 
   return (
     <form
-      onSubmit={submitHandler(e)}
+      onSubmit={submitHandler}
       // onSubmit={event => {
       //   event.preventDefault();
       //   console.log(props.addNote);
